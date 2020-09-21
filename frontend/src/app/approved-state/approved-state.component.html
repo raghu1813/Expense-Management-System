@@ -1,0 +1,15 @@
+<table class="table table-hover" id="customers">
+  <tr>
+    <th>Expense Type</th>
+    <th>Amount</th>
+    <th>Incurred Date</th>
+    <th>Submitted Date</th>
+  </tr>
+<tr *ngFor="let item of expenseService.list">
+<td *ngIf="item.status.startsWith('A')" >{{item.type}}</td>  
+<td *ngIf="item.status.startsWith('A')" >{{item.amount}}</td>  
+<td *ngIf="item.status.startsWith('A')" >{{item.incurredDate}}</td>  
+<td *ngIf="item.status.startsWith('A')" >{{item.submittedDate}}</td>  
+
+</tr>
+</table>

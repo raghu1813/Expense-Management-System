@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="body ">
+
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+      <h2 class="text-center text-primary" >New Expense Submission</h2>
+      <hr/>
+      
+      
+        <div class="form-group form-row  ">
+          
+            <label class="col-md-5" for="type" >Expense Type</label>
+            <input 
+  
+                formControlName="type"
+                id="type" 
+                type="text" 
+                class="form-control col-md-7">
+           
+            <div *ngIf="f.type.touched && f.type.invalid" class="alert alert-danger">
+                <div *ngIf="f.type.errors.required">Type is required.</div>
+                <!-- <div *ngIf="f.name.errors.pattern">only alphabets are allowed</div> -->
+            </div>
+        </div>
+        <div class="form-group form-row">
+          <label class="col-md-5" for="amount">Amount</label>
+          <input 
+              formControlName="amount"
+              id="amount" 
+              type="number"
+              class="form-control col-md-7">
+          <div *ngIf="f.amount.touched && f.amount.invalid" class="alert alert-danger">
+              <div *ngIf="f.amount.errors.required">Amount is required.</div>
+              <!-- <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div> -->
+          </div>
+      </div>
+      <div class="form-group form-row">
+        <label class="col-md-5" for="incurredDate">Incurred Date</label>
+        <input 
+            formControlName="incurredDate"
+            id="incurredDate" 
+            type="text" 
+            class="form-control col-md-7"
+            bsDatepicker
+            [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}"
+            >
+        <div *ngIf="f.incurredDate.touched && f.incurredDate.invalid" class="alert alert-danger">
+            <div *ngIf="f.incurredDate.errors.required">Incurred Date is required.</div>
+            <!-- <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div> -->
+        </div>
+    </div>
+          
+        <div class="form-group ">
+            <div class="form-row">
+              <label for="receipts" class="col-md-5">Receipt</label>
+            <input 
+                formControlName="receipts"
+                id="receipts" 
+                type="file" 
+                class="form-control col-md-7"
+                (change)="upload($event)">
+            <!-- <div *ngIf="f.receipts.touched && f.receiptsinvalid" class="alert alert-danger">
+                <div *ngIf="f.receipts.errors.required">Receipt is required.</div>
+            </div> -->
+            </div>
+            <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+              File uploaded: <a [href]="downloadSrc"></a>
+          </div>
+          <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
+              [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" 
+              aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+              
+        <div class="form-group text-center">
+          <button
+            class="btn btn-success"
+            type="submit"
+            [disabled]="!myForm.valid"
+          >
+            Submit
+          </button>
+        </div>
+    </form>
+    
+    </div>
+</div>

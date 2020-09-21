@@ -1,0 +1,44 @@
+table{
+  display: inline-block;
+  padding-left: 350px;
+   overflow-y: scroll;
+   height:600px;
+  //  display:block;
+ 
+}
+// table.mytable{
+// 	border-collapse: collapse;
+// }
+// table.mytable td, table.mytable th{
+//   border: 1px solid #ccc;
+// }
+// .mytable{
+//   margin: 0 auto;
+// }
+
+form{
+  padding-top: 50px;
+  padding-left: 250px;
+}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4cafa7;
+  color: white;
+}

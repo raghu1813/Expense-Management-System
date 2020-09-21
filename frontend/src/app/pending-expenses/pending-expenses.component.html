@@ -1,0 +1,24 @@
+<div class="body">
+  <table class="table table-hover" id="customers">
+    <tr>
+      <th>Submitter Name</th>
+      <th>Expense Type</th>
+      <th>Amount</th>
+      <th>Receipt</th>
+      
+    </tr>
+  <tr *ngFor="let item of managerService.list">
+  <td *ngIf="item.status.startsWith('S')">{{item.submitterName}}</td>  
+  <td *ngIf="item.status.startsWith('S')" >{{item.type}}</td> 
+  <td *ngIf="item.status.startsWith('S')" >{{item.amount}}</td>
+  <td *ngIf="item.status.startsWith('S')"><a href="{{item.receipts}}">ViewHere</a></td>
+  <td *ngIf="item.status.startsWith('S')" ><button class="btn btn-success mr-1"
+   (click)= "approvePhoto(item.id)"
+    >Approve</button></td>  
+  <td *ngIf="item.status.startsWith('S')" ><button class="btn btn-danger"
+    (click)="rejectPhoto(item.id)"
+    >Reject</button></td>
+  
+  </tr>
+  </table>
+</div>

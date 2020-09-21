@@ -1,0 +1,62 @@
+<form class="form-inline" #form="ngForm" (ngSubmit)="loadExpenses()" novalidate>
+  <div class="form-group">
+    <label for="fromDate">Date From</label>
+    <input type="datetime" class="form-control ml-1" style="width: 70px" id="FromDate"
+    bsDatepicker
+    [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}"
+      [(ngModel)]="expenseParams.fromDate" name="fromDate">
+  </div>
+
+  <div class="form-group px-2">
+    <label for="toDate">Date To</label>
+    <input type="datetime" class="form-control ml-1" style="width: 70px" id="toDate"
+    bsDatepicker
+    [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}"
+       [(ngModel)]="expenseParams.toDate" name="toDate">
+  </div>
+
+  <div class="form-group px-2">
+    <label for="status">Status </label>
+    <select class="form-control ml-1" style="width: 130px" id="status"
+      [(ngModel)]="expenseParams.status" name="gender">
+      <option *ngFor="let status of statusList" [value]="status.value">
+        {{status.display}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group px-2">
+    <label for="submitterName"> Submitter Name</label>
+    <input type="text" class="form-control ml-1" [(ngModel)]="expenseParams.submitterName" id="submitterName" name="submitterName" >
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
+  <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left:10px">
+      Reset Filter
+  </button>
+
+</form>
+
+<div class="body mt-5">
+  <table class="table mytable" id="customers">
+    <tr>
+      <th>Submitter Name</th>
+      <th>Expense Type</th>
+      <th>Amount</th>
+      <th>Incurred Date</th>
+      <th>Receipt</th>
+      <th>Expense Status</th>
+      
+    </tr>
+    
+      <tr *ngFor="let item of managerService.list">
+        <td >{{item.submitterName}}</td>  
+        <td >{{item.type}}</td> 
+        <td >{{item.amount}}</td>
+        <td>{{item.incurredDate}}</td>
+        <td ><a href="{{item.receipts}}">ViewHere</a></td>
+        <td>{{item.status}}</td>
+        
+        
+        </tr>
+  
+  </table>
+</div>
