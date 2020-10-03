@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand"  >Expense Management</a>
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
@@ -29,7 +29,7 @@
         >
       </div>
     </div>
-    <form
+    <!-- <form
       *ngIf="!loggedIn()"
       #loginForm="ngForm"
       class="form-inline my-2 my-lg-0"
@@ -58,6 +58,6 @@
       >
         Login
       </button>
-    </form>
+    </form> -->
   </div>
 </nav> 

@@ -253,3 +253,4 @@ C:\Users\Raghuram\source\repos\ExpensesManagementSystem\Backend.UnitTests\bin\De
 C:\Users\Raghuram\source\repos\ExpensesManagementSystem\Backend.UnitTests\obj\Debug\netcoreapp3.1\Backend.UnitTests.csproj.CoreCompileInputs.cache
 C:\Users\Raghuram\source\repos\ExpensesManagementSystem\Backend.UnitTests\bin\Debug\netcoreapp3.1\log4net.dll
 C:\Users\Raghuram\source\repos\ExpensesManagementSystem\Backend.UnitTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Users\Raghuram\source\repos\ExpensesManagementSystem\Backend.UnitTests\bin\Debug\netcoreapp3.1\log4net.config

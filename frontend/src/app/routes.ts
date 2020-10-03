@@ -6,9 +6,10 @@ import { PendingExpensesComponent } from './pending-expenses/pending-expenses.co
 import { SubmissionsListComponent } from './submissions-list/submissions-list.component';
 import { ExpenseDetailComponent } from './expense-detail/expense-detail.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 export const appRoutes: Routes = [
   
-    {path: '', component: HomeComponent},
+    {path: '', component: LoginComponent},
     {path: '', 
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],

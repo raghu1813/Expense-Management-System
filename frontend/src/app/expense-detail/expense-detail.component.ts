@@ -10,7 +10,6 @@ import { Expense } from '../_models/Expense';
 export class ExpenseDetailComponent implements OnInit {
 expenseParams: any = {};
 statusList = [
-  { value: 'Submitted', display: 'Submitted' },
   { value: 'Approved', display: 'Approved' },
   {value: 'Rejected', display: 'Rejected'}
 ];
@@ -18,7 +17,7 @@ statusList = [
   searchText: string;
   ngOnInit() {
     this.managerService.getExpenses();
-    this.expenseParams.status = "Submitted";
+    this.expenseParams.status = "Approved";
     this.expenseParams.fromDate = new Date('01/01/2020');
     this.expenseParams.toDate = new Date();
     this.expenseParams.submitterName = '';

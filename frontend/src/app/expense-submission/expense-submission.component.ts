@@ -134,8 +134,6 @@ export class ExpenseSubmissionComponent implements OnInit {
       submittedDate: null,
       receipts: ''
 
-
-
     };
     }
   }
